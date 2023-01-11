@@ -1,0 +1,129 @@
+_newselect(5, [3 4], NULL, NULL, {0, 981470}) = 1 (in [3], left {0, 979441})
+recvfrom(3, "\0\5AAAAA", 84, 0, {sa_family=AF_INET, sin_port=htons(37477), sin_addr=inet_addr("127.0.0.1")}, [16]) = 7
+rt_sigaction(SIGQUIT, {SIG_IGN, [QUIT], SA_RESTART}, {SIG_DFL, [QUIT], SA_RESTART}, 16) = 0
+rt_sigaction(SIGINT, {SIG_IGN, [INT], SA_RESTART}, {SIG_DFL, [INT], SA_RESTART}, 16) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [CHLD], SA_RESTART}, {SIG_DFL, [CHLD], SA_RESTART}, 16) = 0
+fork()                                  = 1963
+rt_sigaction(SIGQUIT, {SIG_IGN, [QUIT], SA_RESTART}, {SIG_IGN, [QUIT], SA_RESTART}, 16) = 0
+rt_sigaction(SIGINT, {SIG_IGN, [INT], SA_RESTART}, {SIG_IGN, [INT], SA_RESTART}, 16) = 0
+wait4(1963, Process 1963 attached
+<unfinished ...>
+[pid  1963] rt_sigaction(SIGQUIT, {SIG_DFL, [QUIT], SA_RESTART}, {SIG_IGN, [QUIT], SA_RESTART}, 16) = 0
+[pid  1963] rt_sigaction(SIGINT, {SIG_DFL, [INT], SA_RESTART}, {SIG_IGN, [INT], SA_RESTART}, 16) = 0
+[pid  1963] rt_sigaction(SIGCHLD, {SIG_DFL, [CHLD], SA_RESTART}, {SIG_DFL, [CHLD], SA_RESTART}, 16) = 0
+[pid  1963] execve("/bin/sh", ["sh", "-c", "echo \"msgcenterd[mc_process_udp:542]: udp recv msg len wrong: 7, 16705\n\" > /dev/console \r\n"], [/* 10 vars */]) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffb000
+[pid  1963] stat("/etc/ld.so.cache", 0x7fffe9c8) = -1 ENOENT (No such file or directory)
+[pid  1963] open("/igloo/utils/libnvram.so", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0755, st_size=37484, ...}) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffa000
+[pid  1963] read(5, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\10\0\0\0\1\0\0\26\260\0\0\0004\0\0\217t\0\0\20\7\0004\0 \0\6\0(\0\23\0\20p\0\0\3\0\0\0\370\0\0\0\370\0\0\0\370\0\0\0\30\0\0\0\30\0\0\0\4\0\0\0\10p\0\0\0\0\0\1\20\0\0\1\20\0\0\1\20"..., 4096) = 4096
+[pid  1963] mmap(NULL, 98304, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77fd2000
+[pid  1963] mmap(0x77fd2000, 28640, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77fd2000
+[pid  1963] mmap(0x77fe9000, 284, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 5, 0x7000) = 0x77fe9000
+[pid  1963] close(5)                    = 0
+[pid  1963] munmap(0x77ffa000, 4096)    = 0
+[pid  1963] open("/lib/libcrypt.so.0", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=11288, ...}) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffa000
+[pid  1963] read(5, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\10\0\0\0\1\0\0\4\240\0\0\0004\0\0)\230p\0\20\7\0004\0 \0\7\0(\0\20\0\17\0\0\0\6\0\0\0004\0\0\0004\0\0\0004\0\0\0\340\0\0\0\340\0\0\0\5\0\0\0\4\0\0\0\3\0\0'@\0\0'@\0\0'@"..., 4096) = 4096
+[pid  1963] mmap(NULL, 147456, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77fae000
+[pid  1963] mmap(0x77fae000, 10068, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77fae000
+[pid  1963] mmap(0x77fc0000, 1956, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 5, 0x2000) = 0x77fc0000
+[pid  1963] mmap(0x77fc1000, 68224, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x77fc1000
+[pid  1963] close(5)                    = 0
+[pid  1963] munmap(0x77ffa000, 4096)    = 0
+[pid  1963] open("/lib/liblog.so", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=5352, ...}) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffa000
+[pid  1963] read(5, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\10\0\0\0\1\0\0\6\240\0\0\0004\0\0\20\330p\0\20\7\0004\0 \0\6\0(\0\32\0\31p\0\0\0\0\0\0\364\0\0\0\364\0\0\0\364\0\0\0\30\0\0\0\30\0\0\0\4\0\0\0\4\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 4096
+[pid  1963] mmap(NULL, 69632, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77f9d000
+[pid  1963] mmap(0x77f9d000, 3672, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77f9d000
+[pid  1963] mmap(0x77fad000, 3796, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77fad000
+[pid  1963] close(5)                    = 0
+[pid  1963] munmap(0x77ffa000, 4096)    = 0
+[pid  1963] open("/lib/libmsgcenter.so", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=7316, ...}) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffa000
+[pid  1963] read(5, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\10\0\0\0\1\0\0\7`\0\0\0004\0\0\30\204p\0\20\7\0004\0 \0\6\0(\0\32\0\31p\0\0\0\0\0\0\364\0\0\0\364\0\0\0\364\0\0\0\30\0\0\0\30\0\0\0\4\0\0\0\4\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 4096
+q
+[pid  1963] mmap(NULL, 73728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77f8b000
+[pid  1963] mmap(0x77f8b000, 5388, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77f8b000
+[pid  1963] mmap(0x77f9c000, 1408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 5, 0x1000) = 0x77f9c000
+[pid  1963] close(5)                    = 0
+[pid  1963] munmap(0x77ffa000, 4096)    = 0
+[pid  1963] open("/lib/libc.so.0", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=403196, ...}) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffa000
+[pid  1963] read(5, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\10\0\0\0\1\0\0\236\240\0\0\0004\0\6\"\234p\0\20\7\0004\0 \0\n\0(\0\34\0\33\0\0\0\6\0\0\0004\0\0\0004\0\0\0004\0\0\1@\0\0\1@\0\0\0\5\0\0\0\4\0\0\0\3\0\5g@\0\5g@\0\5g@"..., 4096) = 4096
+[pid  1963] mmap(NULL, 446464, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77f1e000
+[pid  1963] mmap(0x77f1e000, 354160, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77f1e000
+[pid  1963] mmap(0x77f84000, 7880, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 5, 0x56000) = 0x77f84000
+[pid  1963] mmap(0x77f86000, 18560, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x77f86000
+[pid  1963] close(5)                    = 0
+[pid  1963] munmap(0x77ffa000, 4096)    = 0
+[pid  1963] open("/lib/libc.so.0", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=403196, ...}) = 0
+[pid  1963] close(5)                    = 0
+[pid  1963] open("/lib/libgcc_s.so.1", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=245840, ...}) = 0
+[pid  1963] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ffa000
+[pid  1963] read(5, "\177ELF\1\2\1\0\0\0\0\0\0\0\0\0\0\3\0\10\0\0\0\1\0\0\263\200\0\0\0004\0\3\273\360p\0\20\7\0004\0 \0\7\0(\0\34\0\33p\0\0\0\0\0\1\24\0\0\1\24\0\0\1\24\0\0\0\30\0\0\0\30\0\0\0\4\0\0\0\4\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 4096
+[pid  1963] mmap(NULL, 241664, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x77ee3000
+[pid  1963] mmap(0x77ee3000, 169308, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 5, 0) = 0x77ee3000
+[pid  1963] mmap(0x77f1d000, 2400, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 5, 0x2a000) = 0x77f1d000
+[pid  1963] close(5)                    = 0
+[pid  1963] munmap(0x77ffa000, 4096)    = 0
+[pid  1963] open("/lib/libc.so.0", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=403196, ...}) = 0
+[pid  1963] close(5)                    = 0
+[pid  1963] open("/lib/libgcc_s.so.1", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=245840, ...}) = 0
+[pid  1963] close(5)                    = 0
+[pid  1963] open("/lib/libc.so.0", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=403196, ...}) = 0
+[pid  1963] close(5)                    = 0
+[pid  1963] open("/lib/libc.so.0", O_RDONLY) = 5
+[pid  1963] fstat(5, {st_mode=S_IFREG|0777, st_size=403196, ...}) = 0
+[pid  1963] close(5)                    = 0
+[pid  1963] stat("/lib/ld-uClibc.so.0", {st_mode=S_IFREG|0777, st_size=22604, ...}) = 0
+[pid  1963] mprotect(0x77f84000, 4096, PROT_READ) = 0
+[pid  1963] mprotect(0x77ffe000, 4096, PROT_READ) = 0
+[pid  1963] ioctl(0, TIOCNXCL or TIOCNXCL, 0x7fffe900) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid  1963] ioctl(1, TIOCNXCL or TIOCNXCL, 0x7fffe900) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid  1963] brk(0)                      = 0x479000
+[pid  1963] brk(0x47a000)               = 0x47a000
+[pid  1963] getpid()                    = 1963
+[pid  1963] rt_sigaction(SIGCHLD, {SIG_DFL, [CHLD], SA_RESTART}, {SIG_DFL, [], 0}, 16) = 0
+[pid  1963] rt_sigaction(SIGHUP, {SIG_DFL, [HUP], SA_RESTART}, {SIG_DFL, [], 0}, 16) = 0
+[pid  1963] brk(0x47b000)               = 0x47b000
+[pid  1963] getppid()                   = 181
+[pid  1963] stat64("/", {st_mode=S_IFDIR|0777, st_size=4096, ...}) = 0
+[pid  1963] stat64(".", {st_mode=S_IFDIR|0777, st_size=4096, ...}) = 0
+[pid  1963] rt_sigaction(SIGINT, NULL, {SIG_DFL, [], 0}, 16) = 0
+[pid  1963] rt_sigaction(SIGINT, {0x41df94, ~[], 0}, NULL, 16) = 0
+[pid  1963] rt_sigaction(SIGQUIT, NULL, {SIG_DFL, [], 0}, 16) = 0
+[pid  1963] rt_sigaction(SIGQUIT, {SIG_IGN, ~[], 0}, NULL, 16) = 0
+[pid  1963] rt_sigaction(SIGTERM, NULL, {SIG_DFL, [], 0}, 16) = 0
+[pid  1963] rt_sigaction(SIGTERM, {SIG_DFL, ~[], 0}, NULL, 16) = 0
+[pid  1963] open("/dev/console", O_WRONLY|O_CREAT|O_TRUNC|O_LARGEFILE, 0666) = 5
+[pid  1963] fcntl64(1, F_DUPFD, 10)     = 10
+[pid  1963] dup2(5, 1)                  = 1
+[pid  1963] close(5)                    = 0
+[pid  1963] wait4(-1, 0x7fffe7f8, WNOHANG, NULL) = -1 ECHILD (No child processes)
+[pid  1963] write(1, "msgcenterd[mc_process_udp:542]: udp recv msg len wrong: 7, 16705\n \r\n", 68) = 68
+[pid  1963] dup2(10, 1)                 = 1
+[pid  1963] close(10)                   = 0
+[pid  1963] exit(0)                     = ?
+[pid  1963] +++ exited with 0 +++
+<... wait4 resumed> [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1963
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1963, si_uid=0, si_status=0, si_utime=0, si_stime=1} ---
+rt_sigaction(SIGQUIT, {SIG_DFL, [QUIT], SA_RESTART}, {SIG_IGN, [QUIT], SA_RESTART}, 16) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [INT], SA_RESTART}, {SIG_IGN, [INT], SA_RESTART}, 16) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [CHLD], SA_RESTART}, {SIG_DFL, [CHLD], SA_RESTART}, 16) = 0
+_newselect(5, [3 4], NULL, NULL, {1, 0}) = 0 (Timeout)
+_newselect(5, [3 4], NULL, NULL, {1, 0}) = 0 (Timeout)
+_newselect(5, [3 4], NULL, NULL, {1, 0}) = 0 (Timeout)
+_newselect(5, [3 4], NULL, NULL, {1, 0}) = 0 (Timeout)
+_newselect(5, [3 4], NULL, NULL, {1, 0}) = 0 (Timeout)
+_newselect(5, [3 4], NULL, NULL, {1, 0}q

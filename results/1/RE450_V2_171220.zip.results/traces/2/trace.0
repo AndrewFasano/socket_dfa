@@ -1,0 +1,81 @@
+_newselect(8, [7], NULL, NULL, {0, 840166}) = 0 (Timeout)
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=134, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=135, loads=[5888, 4512, 1504] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=136, loads=[5408, 4416, 1472] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+q
+sysinfo({uptime=144, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=144, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=144, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=145, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=146, loads=[4960, 4320, 1440] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=147, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+sysinfo({uptime=148, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+_newselect(8, [7], NULL, NULL, {1, 0})  = 0 (Timeout)
+sysinfo({uptime=149, loads=[4544, 4224, 1408] totalram=254627840, freeram=232091648, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=85}) = 0
+q

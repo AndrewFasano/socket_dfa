@@ -1,0 +1,32 @@
+[pid    98] epoll_pwait(3, {{EPOLLIN, {u32=0, u64=0}}}, 1024, -1, NULL, 16) = 1
+[pid    98] futex(0x77ffd150, FUTEX_WAKE_PRIVATE, 1) = 0
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] futex(0x77ffd150, FUTEX_WAIT_PRIVATE, 1, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+[pid    95] accept4(9, {sa_family=0x28 /* AF_??? */, sa_data="\0\0\0\0\0)\0\0\0\2\0\0\0\0"}, [16], SOCK_CLOEXEC) = 57
+[pid    95] ioctl(57, 0x667e, 0x7fff8c78) = 0
+[pid    95] epoll_ctl(5, EPOLL_CTL_ADD, 57, {EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, {u32=0, u64=83886129}} <unfinished ...>
+[pid    98] <... epoll_pwait resumed> {{EPOLLIN|EPOLLOUT, {u32=0, u64=83886129}}}, 1024, -1, NULL, 16) = 1
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] <... epoll_ctl resumed> )   = 0
+[pid    95] write(4, "\0\0\0\0\0\0\0\1", 8 <unfinished ...>
+[pid    98] <... epoll_pwait resumed> {{EPOLLIN, {u32=0, u64=2147483648}}}, 1024, -1, NULL, 16) = 1
+[pid    98] write(1, "\33[2m2023-01-11T15:45:51.477858Z\33[0m \33[32m INFO\33[0m \33[2mvsock_vpn::guest\33[0m\33[2m:\33[0m processing clie"..., 142) = 142
+[pid    98] recvfrom(57, "\0\22", 2, 0, NULL, NULL) = 2
+[pid    98] recvfrom(57, "\0\0\0\0\0\0\0\0\0\0\0\0z\256\1\0\0\0", 18, 0, NULL, NULL) = 18
+[pid    98] socket(PF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 59
+[pid    98] bind(59, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
+[pid    98] epoll_ctl(5, EPOLL_CTL_ADD, 59, {EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, {u32=0, u64=83886130}}) = 0
+[pid    98] recvfrom(57, "\4\0", 2, 0, NULL, NULL) = 2
+[pid    98] recvfrom(57, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 1024, 0, NULL, NULL) = 1024
+[pid    98] epoll_pwait(3, {{EPOLLOUT, {u32=0, u64=83886130}}}, 1024, -1, NULL, 16) = 1
+[pid    98] sendto(59, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 1024, MSG_NOSIGNAL, {sa_family=AF_INET, sin_port=htons(44666), sin_addr=inet_addr("0.0.0.0")}, 16) = 1024
+[pid    98] epoll_pwait(3, {{EPOLLOUT, {u32=0, u64=83886130}}, {EPOLLIN|EPOLLOUT, {u32=0, u64=40}}}, 1024, -1, NULL, 16) = 2
+[pid    98] recvfrom(50, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 8192, 0, NULL, NULL) = 1024
+[pid    98] sendto(47, "\4\0", 2, MSG_NOSIGNAL, NULL, 0) = 2
+[pid    98] sendto(47, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 1024, MSG_NOSIGNAL, NULL, 0) = 1024
+[pid    98] recvfrom(47, 0x6a6ed8, 2, 0, 0, 0) = -1 EAGAIN (Resource temporarily unavailable)
+[pid    98] epoll_pwait(3, {{EPOLLOUT, {u32=0, u64=39}}}, 1024, -1, NULL, 16) = 1
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] <... write resumed> )       = 8
+[pid    95] accept4(9, 0x7fff8b20, [16], SOCK_CLOEXEC) = -1 EAGAIN (Resource temporarily unavailable)
+[pid    95] futex(0x77ffd150, FUTEX_WAIT_PRIVATE, 1, NULLq

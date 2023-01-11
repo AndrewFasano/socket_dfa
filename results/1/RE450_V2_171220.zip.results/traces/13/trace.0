@@ -1,0 +1,13 @@
+_newselect(4, [3], NULL, NULL, {1, 769357}) = 1 (in [3], left {1, 767121})
+recvfrom(3, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 81920, 0, {sa_family=AF_INET, sin_port=htons(34190), sin_addr=inet_addr("127.0.0.1")}, [16]) = 1024
+sendto(3, "\0\0\0\7\0\0\0\0\0\0\0\0", 12, 0, {sa_family=AF_INET, sin_port=htons(61000), sin_addr=inet_addr("127.0.0.1")}, 16) = 12
+sysinfo({uptime=891, loads=[26624, 17632, 9856] totalram=254627840, freeram=231358464, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=82}) = 0
+_newselect(4, [3], NULL, NULL, {2, 0})  = 0 (Timeout)
+sysinfo({uptime=893, loads=[29760, 18432, 10176] totalram=254627840, freeram=231297024, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=82}) = 0
+_newselect(4, [3], NULL, NULL, {2, 0})  = 0 (Timeout)
+sysinfo({uptime=895, loads=[29760, 18432, 10176] totalram=254627840, freeram=231297024, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=82}) = 0
+_newselect(4, [3], NULL, NULL, {2, 0})  = 0 (Timeout)
+sysinfo({uptime=897, loads=[32640, 19232, 10496] totalram=254627840, freeram=231297024, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=82}) = 0
+_newselect(4, [3], NULL, NULL, {2, 0})  = 0 (Timeout)
+sysinfo({uptime=899, loads=[32640, 19232, 10496] totalram=254627840, freeram=231297024, sharedram=16384, bufferram=913408} totalswap=0, freeswap=0, procs=82}) = 0
+_newselect(4, [3], NULL, NULL, {2, 0}q

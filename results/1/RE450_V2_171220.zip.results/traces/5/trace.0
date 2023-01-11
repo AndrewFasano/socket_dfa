@@ -1,0 +1,13 @@
+_newselect(6, [4 5], NULL, NULL, {0, 957888}) = 1 (in [5], left {0, 955765})
+recvfrom(5, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 512, 0, {sa_family=AF_INET, sin_port=htons(33621), sin_addr=inet_addr("127.0.0.1")}, [16]) = 512
+brk(0)                                  = 0x43e000
+brk(0x43f000)                           = 0x43f000
+open("/tmp/device_log", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 6
+ioctl(6, TIOCNXCL or TIOCNXCL, 0x7ffae880) = -1 ENOTTY (Inappropriate ioctl for device)
+brk(0x440000)                           = 0x440000
+write(6, "[]\n", 3)                     = 3
+close(6)                                = 0
+sendto(5, "Write OK\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 512, 0, {sa_family=AF_INET, sin_port=htons(33621), sin_addr=inet_addr("127.0.0.1")}, 16) = 512
+_newselect(6, [4 5], NULL, NULL, {2, 0}) = 0 (Timeout)
+_newselect(6, [4 5], NULL, NULL, {2, 0}) = 0 (Timeout)
+_newselect(6, [4 5], NULL, NULL, {2, 0}q

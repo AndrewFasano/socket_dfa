@@ -1,0 +1,29 @@
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] futex(0x77ffd150, FUTEX_WAIT_PRIVATE, 1, NULL <unfinished ...>
+[pid    98] <... epoll_pwait resumed> {{EPOLLIN, {u32=0, u64=0}}}, 1024, -1, NULL, 16) = 1
+[pid    98] futex(0x77ffd150, FUTEX_WAKE_PRIVATE, 1) = 1
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] <... futex resumed> )       = 0
+[pid    95] accept4(9, {sa_family=0x28 /* AF_??? */, sa_data="\0\0\0\0\0D\0\0\0\2\0\0\0\0"}, [16], SOCK_CLOEXEC) = 102
+[pid    95] ioctl(102, 0x667e, 0x7fff8c78) = 0
+[pid    95] epoll_ctl(5, EPOLL_CTL_ADD, 102, {EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, {u32=0, u64=93}} <unfinished ...>
+[pid    98] <... epoll_pwait resumed> {{EPOLLIN|EPOLLOUT, {u32=0, u64=93}}}, 1024, -1, NULL, 16) = 1
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] <... epoll_ctl resumed> )   = 0
+[pid    95] write(4, "\0\0\0\0\0\0\0\1", 8 <unfinished ...>
+[pid    98] <... epoll_pwait resumed> {{EPOLLIN, {u32=0, u64=2147483648}}}, 1024, -1, NULL, 16) = 1
+[pid    98] write(1, "\33[2m2023-01-11T15:56:33.378670Z\33[0m \33[32m INFO\33[0m \33[2mvsock_vpn::guest\33[0m\33[2m:\33[0m processing clie"..., 142) = 142
+[pid    98] recvfrom(102, "\0\22", 2, 0, NULL, NULL) = 2
+[pid    98] recvfrom(102, "\0\0\0\0\0\0\0\0\0\0\0\0q\341\1\0\0\0", 18, 0, NULL, NULL) = 18
+[pid    98] socket(PF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 103
+[pid    98] bind(103, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
+[pid    98] epoll_ctl(5, EPOLL_CTL_ADD, 103, {EPOLLIN|EPOLLOUT|EPOLLRDHUP|EPOLLET, {u32=0, u64=94}}) = 0
+[pid    98] recvfrom(102, "\0d", 2, 0, NULL, NULL) = 2
+[pid    98] recvfrom(102, "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB", 100, 0, NULL, NULL) = 100
+[pid    98] epoll_pwait(3, {{EPOLLOUT, {u32=0, u64=94}}}, 1024, -1, NULL, 16) = 1
+[pid    98] sendto(103, "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB", 100, MSG_NOSIGNAL, {sa_family=AF_INET, sin_port=htons(57713), sin_addr=inet_addr("0.0.0.0")}, 16) = 100
+[pid    98] epoll_pwait(3, {{EPOLLOUT, {u32=0, u64=94}}, {EPOLLIN|EPOLLOUT, {u32=0, u64=36}}}, 1024, -1, NULL, 16) = 2
+[pid    98] epoll_pwait(3,  <unfinished ...>
+[pid    95] <... write resumed> )       = 8
+[pid    95] accept4(9, 0x7fff8b20, [16], SOCK_CLOEXEC) = -1 EAGAIN (Resource temporarily unavailable)
+[pid    95] futex(0x77ffd150, FUTEX_WAIT_PRIVATE, 1, NULLq
