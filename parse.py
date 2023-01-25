@@ -18,13 +18,12 @@ from utils import Trace
 
 
 def populate_map(results_root):
-    bin_trace_map = {} # binary -> [(input_data, trace)]
+    bin_trace_map = {} # (fw, binary) -> [(input_data, trace)]
 
     for fw_root in glob.glob(f"{results_root}/*/*/traces/"):
         fw_name = fw_root.split("/")[-2].split(".results")[0]
         for trace_dir in glob.glob(f"{fw_root}/*"):
             target_id = trace_dir.split("/")[-1]
-            print(fw_name, fw_root, target_id)
 
             target_binary = open(f"{trace_dir}/filepath.txt").read()
             if target_binary not in bin_trace_map:
@@ -32,9 +31,12 @@ def populate_map(results_root):
 
             for trace in glob.glob(f"{trace_dir}/trace.*"):
                 input_data = open(trace.replace("trace.", "input."), "rb").read()
+                #if trace != './results/1/R6250-V1.0.4.26_10.1.23.zip.results/traces/0/trace.0':
+                #    continue
+                #print("DOIT")
                 with open(trace, "rb") as f:
                     t = Trace(input_data, f.read().splitlines())
-                bin_trace_map[target_binary].append((input_data, t.events))
+                bin_trace_map[target_binary].append((trace, input_data, t.events))
 
     return bin_trace_map
 

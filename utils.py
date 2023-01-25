@@ -58,12 +58,13 @@ class Trace:
         self.last_pid = None # If there was a linebreak record the last PID we saw. 0 means NA but not None
 
         self.prefix = ""
-        for raw_event in raw_trace:
-            if event := self.parse_event(raw_event):
+        for raw_event, next_event in zip(raw_trace, raw_trace[1:] + [None]):
+            if event := self.parse_event(raw_event, next_event):
+                #print(event)
                 self.events.append(event)
 
 
-    def parse_event(self, raw_line, interrupted=False):
+    def parse_event(self, raw_line, next_event, interrupted=False):
         line = raw_line.strip()
         if isinstance(raw_line, bytes):
             line = raw_line.strip().decode(errors='ignore')
@@ -71,7 +72,7 @@ class Trace:
         # [77f21c6c] _newselect(5, [3 4], NULL, NULL, {0, 987299}) = 1 (in [3], left {0, 984979})'
         # [pid  8680] time([1672158296]) = 1672158296'
 
-        if m := re.match(r'(?:\[pid\s*(\d*)\] )?([a-zA-Z0-9_\\\.]*)\((.*)\s+=\s*(-?(?:0x)?[0-9a-f]*)\s?(.*)?', line):
+        if m := re.match(r'(?:\[pid\s*(\d*)\] )?([a-zA-Z0-9_\\\.]*)\((.*)\)\s+=\s*(-?(?:0x)?[0-9a-f]*)\s?(.*)?', line):
             (pid, sc_name, details, retval, message) = m.groups()
             pid = int(pid) if pid is not None else None
 
@@ -80,9 +81,68 @@ class Trace:
             else:
                 #self.logger.info(f"Unexpected details without close paren: {details}") # It happens for long lines
                 pass
-            details = details.split(", ")
+
+            # This is unfortunately complicated. Woo
+            details_s = details
+
+            # Extract {} strings, replace with tokens, then use regex to split
+            # then replace tokens
+            curly_depth = 0
+            quoted = False
+            escaped = False
+            decurly  = ''
+            curly_strs = []
+
+            if '{' in details_s:
+
+                for idx in range(len(details_s)):
+                    if details_s[idx] == '\\':
+                        # Next char is an escape
+                        escaped = True
+                        continue
+
+                    if not escaped and quoted is False and details_s[idx] in "\"'":
+                        # Saw an unescaped starting quote
+                        quoted = details_s[idx]
+                    elif not escaped and quoted and details_s[idx] == quoted:
+                        # Saw an unescaped, ending quote
+                        quoted = False
+
+                    if details_s[idx] == '{':
+                        if curly_depth == 0:
+                            decurly += f'<CURL>{len(curly_strs)}<ENDCURL>'
+                            curly_strs.append('')
+
+                        curly_depth += 1
+
+                    if curly_depth == 0:
+                        decurly += details_s[idx]
+                    else:
+                        curly_strs[-1] += details_s[idx]
+
+                    if details_s[idx] == '}':
+                        curly_depth -= 1
 
 
+                    if escaped:
+                        escaped = False
+
+            else:
+                decurly = details_s
+
+            # Split with regex
+            details = re.findall(r'\[.+?\]|".+?"|\w+', decurly)
+
+            if len(curly_strs):
+                # If we have curly strs, replace tokens with the values
+                for idx in range(len(details)):
+                    while "<CURL>" in details[idx]:
+                        post_curl = int(details[idx].split("<CURL>")[1].split("<ENDCURL>")[0])
+                        details[idx] = details[idx][:details[idx].index("<CURL>")] + \
+                                       curly_strs[post_curl] + \
+                                       details[idx][details[idx].index("<ENDCURL>")+9:]
+
+            assert("__CURLY" not in str(details)), f"{raw_line}\n{details}\n\tcontains CURLY"
             for idx in range(len(details)):
                 if idx == 1 and details[idx].startswith("\"\\\\177ELF"):
                     details[1] = "[elf_binary]"
@@ -95,6 +155,46 @@ class Trace:
                                 message=message)
 
         # Line didn't match regex. Need to handle some special cases
+
+        # termination because of our input
+        if line.endswith("q"):
+            # This is probably when we typed q - i.e., after we're done with analysis
+            # but we'll end up doing a q\n in the middle of our line. Unlike with self.interrupted
+            # this output isn't pid specific, it's just the next line we want
+
+            # Check if setting prefix will work out with the next line
+            if len(line) > 1:
+                if next_event:
+                    self.prefix = line[:-1] # Just drop the q
+
+                    next_parse = self.parse_event(next_event, None)
+                    if next_parse != None and next_parse.special == '':
+                        # With prefix we can parse the next line successfully
+                        # It can't be a special, if it is we'd parse like Syscall(...q plus Process X detached as a detached
+                        return None # Prefix will work, we're good - next line will turn into object
+
+                # Prefix doesn't work, let's hack up this line and recurse
+                # on the junk we make
+                # Try to recurse, replace the end of the line with something sane
+                self.prefix = ""
+                newline = line[:-1]
+
+                newline = newline.strip()
+                if newline.endswith(","):
+                    newline = newline[:-1] # Drop final , since we don't know future args
+
+                if len(line.split("(")) > len(line.split(")")):
+                    newline += ")"
+
+                if " = " not in newline:
+                    newline += " = 0"
+                #print(line, "===>", newline)
+                t = self.parse_event(newline, next_event)
+                if t is not None:
+                    t.special = 'final'
+                return t
+
+            return None
         
         # If we had a prefix and the line didn't match, let's retry with prefix
         # if this fails the first match, we'll fall through to the other special cases below
@@ -102,7 +202,7 @@ class Trace:
             # Had interrupted data on last parsed line, restore it now
             line = self.prefix + line
             self.prefix = ""
-            return self.parse_event(line)
+            return self.parse_event(line, next_event)
 
 
         # Try to get PID
@@ -114,9 +214,9 @@ class Trace:
         # No PID, if we just had a line break let's assume continuation?
         if pid is None and self.last_pid is not None and self.last_pid in self.interrupted:
             new_line = self.interrupted[self.last_pid].strip() + line # XXX strip is changing data but easier than matching multiline regex
-            del self.interrupted[pid]
+            del self.interrupted[self.last_pid]
             self.last_pid = None
-            return self.parse_event(new_line, interrupted=False)
+            return self.parse_event(new_line, next_event, interrupted=False)
 
         elif self.last_pid:
             print("WARN Set last_pid but didn't get a line continuation?")
@@ -137,17 +237,19 @@ class Trace:
             return None # We'll handle later?
 
         # Resumed after a prior context-switch mid syscall
-        if m := re.match(r'(?:\[pid\s*(\d*)\] )?<\.\.\. ([a-zA-Z0-9_]*) resumed> .*', line): # <... SYSX resumed>
-            pid, line_end = m.groups()
+        if m := re.match(r'(?:\[pid\s*(\d*)\] )?<\.\.\. ([a-zA-Z0-9_]*) resumed> (.*)', line): # <... SYSX resumed>
+            pid, sc_match, line_end = m.groups()
             pid = int(pid) if pid is not None else None
 
             if pid not in self.interrupted:
                 print(f"WARN: resuming but we missed stop: pid: {pid}, line: {line}")
                 return None # XXX TODO - for now ignore...
 
-            new_line = self.interrupted[pid].strip() + line_end
+            new_line = self.interrupted[pid] + line_end
+            if ",  " in new_line:
+                new_line = new_line.replace(",  ", ", ")
             del self.interrupted[pid]
-            return self.parse_event(new_line, interrupted=True)
+            return self.parse_event(new_line, next_event, interrupted=True)
         
         # On detach we seem to see Process X detached\n<detached ...> as two lines
         if line.startswith("<detached"):
@@ -173,6 +275,7 @@ class Trace:
 
         # Syscall name shows up twice (Strange, but happens a bunch
         # e.g., epoll_pwait(3,epol_pwait
+        sc_name = None
         if m := re.match(r'(?:\[pid\s*(\d*)\] )?([a-zA-Z0-9_\\\.]*)\(', line):
             pid, sc_name = m.groups()
             if pid is None:
@@ -188,17 +291,6 @@ class Trace:
             #print("TODO SIGNAL:", sig, sig2, code, pid, uid, status, utime, stime)
             #return None # TODO
             return TraceLine(pid=pid, special="signal", syscall_args=[sig, code, pid]) # Do we care?
-
-
-        # termination because of our input
-        if line.endswith("q"):
-            # This is probably when we typed q - i.e., after we're done with analysis
-            # but we'll end up doing a q\n in the middle of our line. Unlike with self.interrupted
-            # this output isn't pid specific, it's just the next line we want
-            if len(line) > 1:
-                self.prefix = line[:-1]
-                #print("XXX SET PREFIX FOR LINE:", line)
-            return None
 
 
         #self.logger.warning(f"Unexpected line: {line}")
